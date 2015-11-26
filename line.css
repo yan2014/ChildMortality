@@ -1,0 +1,78 @@
+.axis path,
+.axis line {
+  fill: none;
+  stroke: none;
+  shape-rendering: crispEdges;
+}
+
+path.line {
+  fill: none;
+  stroke-width: 1px;
+  stroke-opacity: 80%;
+}
+
+.line.normal {
+  stroke: gray;
+}
+
+.line.unfocused{
+  stroke-opacity: 40%;
+}
+
+.line.focused {
+  stroke-width: 2px;
+  stroke-opacity: 100%;
+  stroke: orange;
+}
+
+
+body {
+  width: 1024px;
+  margin: auto;
+}
+.container {
+  width: 1024px;
+  margin: auto;
+}
+#graphic {
+  padding-top: 60px;
+}
+#sections {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  top: 0px;
+  z-index: 90;
+  padding-bottom: 20px;
+}
+.step {
+  margin-bottom: 200px;
+  font-family: "TiemposTextWeb-Regular","Georgia";
+  font-size: 16px;
+  line-height: 23px;
+  color: #767678;
+}
+#sections .title {
+  font-family: Arial,Helvetica,"san-serif";
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  color: #262626;
+  line-height: 1.2em;
+}
+#extra-space {
+  height: 300px;
+}
+#vis,#vis1 {
+  display: none;
+  position: fixed;
+  top: 60px;
+  z-index: 1;
+  margin-left: 20;
+  font-size: 10px;
+}
+#page_header {
+  position: relative;
+  z-index: 2;
+  width: 600px;
+}
