@@ -10,6 +10,7 @@ var settings = {
 var dataMap; // make this global
 var dataRate;
 var vis = d3.select("#vis");
+var lineForThree=d3.select("#lineForThree");
 function focus_country(country) {
     d3.selectAll("path").classed("focused", false);
     if (country) {
@@ -23,26 +24,37 @@ var update = function(value) {
     var localdata = dataMap;
     var localdataRate=dataRate;
     var show_vis = true;
+    var show_vis_three=true
     switch(value) {
         case 0:
             console.log("in case", value);
             show_vis = false;
+            show_vis_three=false;
             countryForHighlight = null
             break;
         case 1:
             console.log("in case", value);
             localdata = dataMap;
+            show_vis_three=false;
             countryForHighlight = null
             break;
         case 2:
             console.log("in case", value);
             localdata = dataMap;
+            show_vis_three=false;
             countryForHighlight = "HTI";
             break;
         case 3:
             console.log("in case", value);
             localdata = dataMap;
+            show_vis_three=false;
             countryForHighlight = "RWA";
+            break;
+        case 4:
+            console.log("in case", value);
+            localdata = dataMap;
+            show_vis=false;
+            countryForHighlight = null;
             break;
         default:
             countryForHighlight = null;
@@ -54,6 +66,11 @@ var update = function(value) {
         vis.style("display", "inline-block");
     } else {
         vis.style("display", "none");
+    }
+    if (show_vis_three) {
+        lineForThree.style("display", "inline-block");
+    } else {
+        lineForThree.style("display", "none");
     }
     draw_map(localdata,localdataRate); // we can update the data if we want in the cases. Draw before focus!
     focus_country(countryForHighlight); // this applies a highlight on a country.
@@ -102,14 +119,14 @@ function display(error, world,stunting) {
         $(window).scroll(function (event) {
             var scroll = $(window).scrollTop();
             console.log("scroll", scroll);
-            if (scroll >= 2300 && scroll > oldScroll) {
+            if (scroll >= 3000 && scroll > oldScroll) {
                 vis.style("display", "none");
-            } else if (scroll >= 2300 && scroll < oldScroll) {
+            } else if (scroll >= 3000 && scroll < oldScroll) {
                 vis.style("display", "inline-block"); // going backwards, turn it on.
             }
-            oldScroll = scroll;
-        });
+        oldScroll=scroll;
 
+        });
     }
 } // end display
 

@@ -56,6 +56,16 @@ p {
     padding-left: 20px;
     cursor: pointer;
 }
+#lineForThree {
+    display: none;
+    position: fixed;
+    float: right;
+    top: 60px;
+    z-index: 1;
+    margin-left: 0;
+    font-size: 10px;
+    padding-left: 20px;
+}
 .axis path,
 .axis line {
     fill: none;
@@ -109,4 +119,35 @@ path.line {
 p {
     font-size: 14px;
     margin: 10px 0 0 0;
+}
+.chart {
+    min-height: 200;
+    min-width: 600;
+}
+
+#lineForThree a {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 5px;
+    cursor: pointer;
+    margin-right: 3px;
+}
+#button1{
+    background: rgb(31, 119, 180);
+}
+#button2{
+    background: rgb(255, 127, 14);
+}
+#button3{
+    background: rgb(44, 160, 44);
+}
+.toolTipForThree{
+    position: absolute;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+#Series1s,#Series2s,#Series3s{
+    cursor: pointer;
 }

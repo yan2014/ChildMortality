@@ -47,6 +47,13 @@
         <div class="title">And here's Rwanda</div>
           The Rwandan Genocide was a genocidal mass slaughter of Tutsi and moderate Hutu in Rwanda by members of the Hutu majority. During the approximate 100-day period from April 7 to mid-July 1994, an estimated 500,000-1,000,000 Rwandans were killed, constituting as much as 70% of the Tutsi and 20% of Rwanda's total population.
       </section>
+        <section class="step">
+            <!-- case 4 -->
+            <div class="title">These are three line trends</div>
+In 1994, the Rwandan genocide caused an estimated 500,000-1,000,000 Rwandans' death;<br><br>
+In 1997, the Congo civil war resulted in more than 10,000 deaths in Brazzaville alone;<br><br>
+In 1991, 13 civilians were killed and around 1000 in January Events took place in Lithuania.
+        </section>
     </div>
       <div class="col-md-6">
           <p class="subhead"></p>
@@ -58,12 +65,23 @@
               <span id="range">2015</span>
           </div>
       </div>
+      <div id="lineForThree">
+          <h2>Click the buttons and hover the lines</h2>
+          <a id="button1">Rwandan</a><!--The Rwandan Genocide was a genocidal mass slaughter of Tutsi and moderate Hutu in Rwanda by members of the Hutu majority. During the approximate 100-day period from April 7 to mid-July 1994, an estimated 500,000-1,000,000 Rwandans were killed, constituting as much as 70% of the Tutsi and 20% of Rwanda's total population.-->
+          <a id="button2">Congo</a><!--1997 - Full-scale civil war breaks out; pro-Sassou Nguesso forces, aided by Angolan troops, capture Brazzaville, forcing Lissouba to flee.
+1999 - Government and rebels sign a peace deal in Zambia providing for a national dialogue, demilitarisation of political parties and the re-admission of rebel units into the security forces.-->
+          <a id="button3">Lithuania</a><!--1991 January - As no headway is made in talks with Moscow and the economy faces turmoil, Landsbergis ends suspension of declaration of independence.
+Soviet troops fire on civilians outside television tower in Vilnius, killing 13 and injuring several hundred; 1993 - Brazauskas elected president. Lithuania joins Council of Europe. New national currency, the litas, introduced. Soviet troops complete withdrawal. -->
+          <div class="chart" id="chart2"></div>
+      </div>
   </div>
 </div>
 <div id="extra-space"></div>
+
 <script src="js/mfreeman_scroller.js"></script>
 <script src="js/scroller_settings.js"></script>
 <script src="js/Map.js"></script>
+<script src="js/lineForThree.js"></script>
 <script>
     onload = function() {
         var $ = function(id) { return document.getElementById(id); };
