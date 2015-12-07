@@ -68,8 +68,8 @@ function draw_scatter(data){
         }
         function mousemovefunc(d){
             return tooltip
-                .style("top", (d3.event.pageY) + "px" )
-                .style("left", (d3.event.pageX + 10) + "px");
+                .style("top", (d3.event.pageY - 3350) + "px")
+                .style("left", (d3.event.pageX -600+ 10) + "px");
         }
         function mouseoutfunc(d){
             return tooltip.style("display", "none");
