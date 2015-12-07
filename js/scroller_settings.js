@@ -11,6 +11,7 @@ var dataMap; // make this global
 var dataRate;
 var vis = d3.select("#vis");
 var lineForThree=d3.select("#lineForThree");
+var scatter=d3.select("#scatter");
 function focus_country(country) {
     d3.selectAll("path").classed("focused", false);
     if (country) {
@@ -24,37 +25,49 @@ var update = function(value) {
     var localdata = dataMap;
     var localdataRate=dataRate;
     var show_vis = true;
-    var show_vis_three=true
+    var show_vis_three=true;
+    var show_vis_scatter=true;
     switch(value) {
         case 0:
             console.log("in case", value);
             show_vis = false;
             show_vis_three=false;
+            var show_vis_scatter=false;
             countryForHighlight = null
             break;
         case 1:
             console.log("in case", value);
             localdata = dataMap;
             show_vis_three=false;
+            var show_vis_scatter=false;
             countryForHighlight = null
             break;
         case 2:
             console.log("in case", value);
             localdata = dataMap;
             show_vis_three=false;
+            var show_vis_scatter=false;
             countryForHighlight = "HTI";
             break;
         case 3:
             console.log("in case", value);
             localdata = dataMap;
             show_vis_three=false;
+            var show_vis_scatter=false;
             countryForHighlight = "RWA";
             break;
         case 4:
             console.log("in case", value);
             localdata = dataMap;
             show_vis=false;
+            var show_vis_scatter=false;
             countryForHighlight = null;
+            break;
+        case 5:
+            console.log("in case", value);
+            show_vis = false;
+            show_vis_three=false;
+            countryForHighlight = null
             break;
         default:
             countryForHighlight = null;
@@ -71,6 +84,11 @@ var update = function(value) {
         lineForThree.style("display", "inline-block");
     } else {
         lineForThree.style("display", "none");
+    }
+    if (show_vis_scatter) {
+        scatter.style("display", "inline-block");
+    } else {
+        scatter.style("display", "none");
     }
     draw_map(localdata,localdataRate); // we can update the data if we want in the cases. Draw before focus!
     focus_country(countryForHighlight); // this applies a highlight on a country.
@@ -103,6 +121,7 @@ function display(error, world,stunting) {
         });
         //end of dataset
         draw_lines(countryForIS0,dataset);
+        draw_scatter(stunting);
         var vis = d3.select("#vis");
         dataMap = world; // assign to global; call func in line_chart_refactor.js
         dataRate=stunting;

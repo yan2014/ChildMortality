@@ -66,6 +66,16 @@ p {
     font-size: 10px;
     padding-left: 20px;
 }
+#scatter{
+    display: none;
+    position: fixed;
+    float: right;
+    top: 60px;
+    z-index: 1;
+    margin-left: 0;
+    font-size: 10px;
+    padding-left: 20px;
+}
 .axis path,
 .axis line {
     fill: none;
@@ -147,7 +157,20 @@ p {
     font-size: 12px;
     font-weight: bold;
     z-index: 10;
+    background: rgba(211,211,211,0.7);
 }
 #Series1s,#Series2s,#Series3s{
     cursor: pointer;
+}
+.tooltipForScatter{
+    position: absolute;
+    z-index: 10;
+}
+.tooltipForScatter p {
+    background-color: white;
+    border: gray 1px solid;
+    padding: 2px;
+}
+text{
+    font-size: 15px;
 }
