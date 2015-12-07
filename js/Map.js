@@ -41,11 +41,11 @@ function draw_map(world, stunting) {
             .style("left", (d3.event.pageX + 10) + "px");
         var id = d.id;
         update_lines(id, dataset);
-        d3.selectAll("path.countries").style("stroke", "white");
         d3.select(this).style("stroke", "gray");
         d3.select(this).moveToFront();
     }
     function showCountryLineout(){
+        d3.selectAll(".countries path").style("stroke", "white");
         d3.select(".col-md-6")
             .style("display", "none");
     }

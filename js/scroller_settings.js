@@ -90,7 +90,6 @@ var update = function(value) {
     } else {
         scatter.style("display", "none");
     }
-    draw_map(localdata,localdataRate); // we can update the data if we want in the cases. Draw before focus!
     focus_country(countryForHighlight); // this applies a highlight on a country.
 };
 // setup scroll functionality
@@ -126,6 +125,7 @@ function display(error, world,stunting) {
         dataMap = world; // assign to global; call func in line_chart_refactor.js
         dataRate=stunting;
         //console.log("after makedata", dataMap);
+        draw_map(dataMap,dataRate); // we can update the data if we want in the cases. Draw before focus!
         var scroll = scroller()
             .container(d3.select('#graphic'));
         // pass in .step selection as the steps
@@ -140,9 +140,9 @@ function display(error, world,stunting) {
             console.log("scroll", scroll);
             if (scroll >= 3000 && scroll > oldScroll) {
                 vis.style("display", "none");
-            } else if (scroll >= 3000 && scroll < oldScroll) {
-                vis.style("display", "inline-block"); // going backwards, turn it on.
-            }
+            }// else if (scroll >= 3000 && scroll < oldScroll) {
+              //  vis.style("display", "inline-block"); // going backwards, turn it on.
+           // }
         oldScroll=scroll;
 
         });

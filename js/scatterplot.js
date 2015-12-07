@@ -22,7 +22,7 @@ function draw_scatter(data){
         .attr("width", width)
         .attr("height", height);
 //add tooltip as a div to the page
-    var tooltip = d3.select("#scatter")
+    var tooltip = d3.select("body")
         .append("div")
         .attr("class", "tooltipForScatter");
         xScale.domain(
@@ -73,8 +73,8 @@ function draw_scatter(data){
         }
         function mousemovefunc(d){
             return tooltip
-                .style("top", (d3.event.pageY - 3350) + "px")
-                .style("left", (d3.event.pageX -600+ 10) + "px");
+                .style("top", (d3.event.pageY) + "px")
+                .style("left", (d3.event.pageX+ 10) + "px");
         }
         function mouseoutfunc(d){
             return tooltip.style("display", "none");
