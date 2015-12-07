@@ -52,10 +52,14 @@ function draw_scatter(data){
                 return yScale(d.deathin8);
             })
             .attr("r", dotRadius)
-            .attr("class",function(d){
-                if(d.year==="2012") {return "one";}
-                else if(d.year>="2005"&& d.year<=2010) {return "two"}
-                else{return "three";}
+            .attr("fill",function(d){
+                if(d.Region==="East Asia & Pacific") {return "#e25f82";}
+                else if(d.Region==="South Asia") {return "#895881"}
+                else if(d.Region==="Europe & Central Asia") {return "#ED7C31"}
+                else if(d.Region==="Middle East & North Africa") {return "#82A5C0"}
+                else if(d.Region==="Sub-Saharan Africa") {return "#6E9E75"}
+                else if(d.Region==="Latin America & Caribbean") {return "#00BBD6"}
+                else if(d.Region==="North America") {return "#be1932"}
             });
 
 //tooltip with CSS
@@ -63,8 +67,9 @@ function draw_scatter(data){
             return tooltip
                 .style("display",null)
                 .html("<p>Country: " + d.Country +
-                    "<br>deathin8: " + d.deathin8 +
-                    "<br>Difference: " + d["2008"] + "</p>");
+                    "<br>Deaths: " + d.deathin8 +
+                    "<br>Mortality Rate: " + d["2008"]+
+                    "<br>Region: " + d.Region+ "</p>");
         }
         function mousemovefunc(d){
             return tooltip
@@ -102,7 +107,8 @@ function draw_scatter(data){
             .text("deaths caused by wars in 2008");
 
         // draw legend
-        var color=[{name:"2005-2010",color:"#ff9900"},{name:"2011",color:"#999999"},{name:"2012",color:"#8DC63F"}];
+        var color=[{name:"East Asia & Pacific",color:"#e25f82"},{name:"South Asia",color:"#895881"},{name:"Europe & Central Asia",color:"#ED7C31"}
+            ,{name:"Middle East & North Africa",color:"#82A5C0"},{name:"Sub-Saharan Africa",color:"#6E9E75"},{name:"Latin America & Caribbean",color:"#00BBD6"},{name:"North America",color:"#be1932"}];
         var legend = svg.selectAll(".legend")
             .data(color)
             .enter()
