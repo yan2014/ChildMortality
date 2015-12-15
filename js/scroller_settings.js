@@ -12,6 +12,8 @@ var dataRate;
 var vis = d3.select("#vis");
 var lineForThree=d3.select("#lineForThree");
 var scatter=d3.select("#scatter");
+var area=d3.select("#area");
+
 function focus_country(country) {
     d3.selectAll("path").classed("focused", false);
     if (country) {
@@ -27,51 +29,68 @@ var update = function(value) {
     var show_vis = true;
     var show_vis_three=true;
     var show_vis_scatter=true;
+    var show_vis_area=true;
     switch(value) {
         case 0:
             console.log("in case", value);
             show_vis = false;
             show_vis_three=false;
-            var show_vis_scatter=false;
+            show_vis_scatter=false;
+            show_vis_area=false;
             countryForHighlight = null
             break;
         case 1:
             console.log("in case", value);
             localdata = dataMap;
             show_vis_three=false;
-            var show_vis_scatter=false;
+            show_vis_scatter=false;
+            show_vis_area=false;
             countryForHighlight = null
             break;
         case 2:
             console.log("in case", value);
             localdata = dataMap;
             show_vis_three=false;
-            var show_vis_scatter=false;
+            show_vis_scatter=false;
+            show_vis_area=false;
             countryForHighlight = "HTI";
             break;
         case 3:
             console.log("in case", value);
             localdata = dataMap;
             show_vis_three=false;
-            var show_vis_scatter=false;
+            show_vis_scatter=false;
+            show_vis_area=false;
             countryForHighlight = "RWA";
             break;
         case 4:
             console.log("in case", value);
             localdata = dataMap;
             show_vis=false;
-            var show_vis_scatter=false;
+            show_vis_scatter=false;
+            show_vis_area=false;
             countryForHighlight = null;
             break;
         case 5:
             console.log("in case", value);
             show_vis = false;
             show_vis_three=false;
+            show_vis_area=false;
+            countryForHighlight = null
+            break;
+        case 6:
+            console.log("in case", value);
+            show_vis = false;
+            show_vis_three=false;
+            show_vis_scatter=false;
             countryForHighlight = null
             break;
         default:
             countryForHighlight = null;
-            show_vis = true;
+            show_vis = false;
+            show_vis_three=false;
+            show_vis_scatter=false;
+            show_vis_area=false;
             break;
     }
     console.log("show viz", show_vis);
@@ -90,13 +109,18 @@ var update = function(value) {
     } else {
         scatter.style("display", "none");
     }
+    if (show_vis_area) {
+        area.style("display", "inline-block");
+    } else {
+        area.style("display", "none");
+    }
     focus_country(countryForHighlight); // this applies a highlight on a country.
 };
 // setup scroll functionality
 var countryForIS0="HTI"
 var dataset = [];
 var years = ["1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"];
-function display(error, world,stunting) {
+function display(error, world,stunting,seven) {
     if (error) {
         console.log(error);
     } else {
@@ -121,6 +145,7 @@ function display(error, world,stunting) {
         //end of dataset
         draw_lines(countryForIS0,dataset);
         draw_scatter(stunting);
+        draw_area(seven);
         var vis = d3.select("#vis");
         dataMap = world; // assign to global; call func in line_chart_refactor.js
         dataRate=stunting;
@@ -156,4 +181,5 @@ function typeAndSet(d) {
 queue()
     .defer(d3.json, "countries.json")
     .defer(d3.csv, "NeonatalRate.csv",typeAndSet)
+    .defer(d3.csv, "seven.csv")
     .await(display);

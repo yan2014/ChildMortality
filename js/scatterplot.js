@@ -51,7 +51,9 @@ function draw_scatter(data){
             .attr("cy", function(d) {
                 return yScale(d.deathin8);
             })
-            .attr("r", dotRadius)
+            .attr("r", function(d) {
+                return d["2008"]/5;
+            })
             .attr("fill",function(d){
                 if(d.Region==="East Asia & Pacific") {return "#e25f82";}
                 else if(d.Region==="South Asia") {return "#895881"}
