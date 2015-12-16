@@ -3,7 +3,7 @@ function draw_scatter(data){
     data=data.filter(function(d){return d.deathin8!=0;});
     var height=600;
     var width=800;
-    var margin={top:20,bottom:45,left:150,right:30};
+    var margin={top:20,bottom:45,left:50,right:30};
     var dotRadius=5;
     var xScale=d3.scale.linear()
         .range([margin.left,width-margin.left-margin.right]);
@@ -55,13 +55,13 @@ function draw_scatter(data){
                 return d["2008"]/5;
             })
             .attr("fill",function(d){
-                if(d.Region==="East Asia & Pacific") {return "#e25f82";}
-                else if(d.Region==="South Asia") {return "#895881"}
-                else if(d.Region==="Europe & Central Asia") {return "#ED7C31"}
-                else if(d.Region==="Middle East & North Africa") {return "#82A5C0"}
-                else if(d.Region==="Sub-Saharan Africa") {return "#6E9E75"}
-                else if(d.Region==="Latin America & Caribbean") {return "#00BBD6"}
-                else if(d.Region==="North America") {return "#be1932"}
+                if(d.Region==="East Asia & Pacific") {return "#e6007d";}
+                else if(d.Region==="South Asia") {return "#9d9d9c"}
+                else if(d.Region==="Europe & Central Asia") {return "#ffd500"}
+                else if(d.Region==="Middle East & North Africa") {return "#009641"}
+                else if(d.Region==="Sub-Saharan Africa") {return "#95c11f"}
+                else if(d.Region==="Latin America & Caribbean") {return "#1c9cd8"}
+                else if(d.Region==="North America") {return "#f39200"}
             });
 
 //tooltip with CSS
@@ -109,8 +109,8 @@ function draw_scatter(data){
             .text("deaths caused by wars in 2008");
 
         // draw legend
-        var color=[{name:"East Asia & Pacific",color:"#e25f82"},{name:"South Asia",color:"#895881"},{name:"Europe & Central Asia",color:"#ED7C31"}
-            ,{name:"Middle East & North Africa",color:"#82A5C0"},{name:"Sub-Saharan Africa",color:"#6E9E75"},{name:"Latin America & Caribbean",color:"#00BBD6"},{name:"North America",color:"#be1932"}];
+        var color=[{name:"East Asia & Pacific",color:"#e6007d"},{name:"South Asia",color:"#9d9d9c"},{name:"Europe & Central Asia",color:"#ffd500"}
+            ,{name:"Middle East & North Africa",color:"#009641"},{name:"Sub-Saharan Africa",color:"#95c11f"},{name:"Latin America & Caribbean",color:"#1c9cd8"},{name:"North America",color:"#f39200"}];
         var legend = svg.selectAll(".legend")
             .data(color)
             .enter()

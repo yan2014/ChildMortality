@@ -7,7 +7,6 @@
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/queue.v1.min.js"></script>
     <script src="js/topojson.v1.min.js"></script>
-    <script src="js/d3-legend.min.js"></script>
     <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://d3js.org/queue.v1.min.js"></script>
@@ -15,55 +14,61 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.6.0/d3-legend.min.js"></script>-->
 </head>
 <body>
-<h1>War: Never Ever Again!!!</h1>
-<p>
-    We know that war is a disaster for everything! Let's take a look at how war can be a disaster for under 5 child mortality.
-</p>
+
+<h1 class="bottomstroke">War: Never Ever Again!!!</h1>
+<h3>
+    We know that the war is a disaster for everything! Let's take a look at how the war can be a disaster for under five child mortality.
+</h3>
+
 <div id="page_header">
-    <h4>Look how helpless the child was in the Rwanda genocide.</h4>
+    <h5>Look how helpless the child was in the Rwanda genocide.</h5>
     <img src="RwandaGenocide.jpg">
-    <label>Source: <a href="https://thesentinelproject.org/2014/04/07/remembering-the-rwandan-genocide/">The sentinel project</a></label><!--source:  -->
+    <p>Source: <a href="https://thesentinelproject.org/2014/04/07/remembering-the-rwandan-genocide/">The sentinel project</a></p><!--source:  -->
 </div>
 
 <div class="container">
   <div id="graphic">
     <div id="sections">
       <section class="step">
-          <div class="title">Under 5 child mortality rate has reduced from 1990 to 2015.</div>
+          <div class="title" style="border-bottom:1px solid #e5e4e1">Under 5 child mortality rate has reduced from 1990 to 2015.</div>
 "Since 1990, the world has cut the rate of child deaths by more than one half.
 In 2015, an estimated 5.9 million children under the age of five will still die, equivalent to 11 every minute."-UNICEF
       </section>
       <section class="step">
         <!-- case 1 -->
-          <div class="title">This is the world map based on child mortality rate</div>
-        All the countries shown.
+          <div class="title" style="border-bottom:1px solid #e5e4e1">This is the world map based on child mortality rate</div>
+        When we hover the map to see the trend line, we can see that the under five child mortality rate is decreasing for almost every country.
       </section>
       <section class="step">
         <!-- case 2 -->
-        <div class="title">Here is Haiti</div>
-          The 2010 Haiti earthquake was a catastrophic magnitude 7.0 Mw earthquake. An estimated three million people were affected by the quake.
+        <div class="title" style="border-bottom:1px solid #e5e4e1">Here is Haiti</div>
+          You can see the trend line for Haiti has a steep slope in 2010.<br>
+          The 2010 Haiti earthquake was a catastrophic magnitude 7.0 Mw earthquake. An estimated three million people were affected by the quake.<br>
+          But the trend line went back to its normal decreasing trend in 2011.
       </section>
       <section class="step">
         <!-- case 3 -->
-        <div class="title">And here's Rwanda</div>
-          The Rwandan Genocide was a genocidal mass slaughter of Tutsi and moderate Hutu in Rwanda by members of the Hutu majority. During the approximate 100-day period from April 7 to mid-July 1994, an estimated 500,000-1,000,000 Rwandans were killed, constituting as much as 70% of the Tutsi and 20% of Rwanda's total population.
+        <div class="title" style="border-bottom:1px solid #e5e4e1">And here's Rwanda</div>
+          You can see the trend line for Rwanda has a steep slope in 1994.<br>
+          The 1994 Rwandan Genocide was a genocidal mass slaughter of Tutsi and moderate Hutu in Rwanda by members of the Hutu majority. An estimated 500,000-1,000,000 Rwandans were killed, constituting as much as 70% of the Tutsi and 20% of Rwanda's total population.<br>
+          But the trend line did not go back to its normal decreasing trend until 2000!!!
       </section>
         <section class="step">
             <!-- case 4 -->
-            <div class="title">These are three line trends</div>
+            <div class="title" style="border-bottom:1px solid #e5e4e1">These are three line trends</div>
             In 1994, the Rwandan genocide caused an estimated 500,000-1,000,000 Rwandans' death;<br><br>
             In 1997, the Congo civil war resulted in more than 10,000 deaths in Brazzaville alone;<br><br>
             In 1991, 13 civilians were killed and around 1000 in January Events took place in Lithuania.
         </section>
         <section class="step">
             <!-- case 5 -->
-            <div class="title">Number of deaths caused by wars/conflict VS child mortality</div>
-            (2008)
+            <div class="title" style="border-bottom:1px solid #e5e4e1">Number of deaths caused by wars/conflicts VS child mortality</div>
+            In Sub-Saharan Africa, problems of deaths caused by wars and high child mortality rate existed in 2008. (Data of 2008 is the most recent data on deaths caused by wars.)
         </section>
         <section class="step">
             <!-- case 6 -->
-            <div class="title">Stacked area chart</div>
-            (Sub-Saharan Africa)
+            <div class="title" style="border-bottom:1px solid #e5e4e1">Sub-Saharan Africa</div>
+            Sub-Saharan Africa is an area that has the highest mortality rate comparing to other areas.
         </section>
         <section class="step" style="height: 0px">
             <!-- case 7 -->
@@ -92,11 +97,11 @@ Soviet troops fire on civilians outside television tower in Vilnius, killing 13 
       <div id="scatter">
       </div>
       <div id="area">
-          <p class="special">Mortality rate by absolute value</p>
+          <h2 class="special">Mortality rate by absolute value</h2>
       </div>
   </div>
 </div>
-<h1 id="ending">War: Never Ever Again!!!</h1>
+<h1 id="ending">No more war, happy children!!!</h1>
 <div id="extra-space"></div>
 
 <script src="js/mfreeman_scroller.js"></script>

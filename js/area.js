@@ -23,7 +23,7 @@ function draw_area(data){
         top: 20,
         bottom: 20,
         right: 20,
-        left: 150
+        left: 50
     };
     var dateFormat = d3.time.format("%Y");
 
@@ -33,8 +33,11 @@ function draw_area(data){
     var width = 800 - margin.left - margin.right;
     var height = 700 - margin.top - margin.bottom;
     var stackType = true;
-    var colors = d3.scale.ordinal().range([" #1f77b4", " #aec7e8", "#ff7f0e","#ffbb78","#2ca02c","#98df8a","#d62728"])
-        .domain(["Sub-Saharan Africa", "Eastern and Southern Africa", "West and Central Africa","Middle East and North Africa","South Asia","East Asia and Pacific","Latin America and the Caribbean"]);
+ //   var color=[{name:"East Asia & Pacific",color:"#e6007d"},{name:"South Asia",color:"#9d9d9c"},{name:"Europe & Central Asia",color:"#ffd500"}
+ //       ,{name:"Middle East & North Africa",color:"#009641"},{name:"Sub-Saharan Africa",color:"#95c11f"},{name:"Latin America & Caribbean",color:"#1c9cd8"},{name:"North America",color:"#f39200"}];
+
+    var colors = d3.scale.ordinal().range(["#95c11f", " #009641", "#9d9d9c","#e6007d","#1c9cd8","#ffd500","#f39200","#e9be7c","#42bff9"])
+        .domain(["Sub-Saharan Africa", "Middle East and North Africa", "South Asia","East Asia and Pacific","Latin America and the Caribbean","Central and Eastern Europe","Developed regions","Developing regions","World"]);
     var stackZero = d3.layout.stack()
         .values(function (d) {return d.values;})
         .offset("zero");
