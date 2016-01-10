@@ -36,7 +36,7 @@ function draw_area(data){
  //   var color=[{name:"East Asia & Pacific",color:"#e6007d"},{name:"South Asia",color:"#9d9d9c"},{name:"Europe & Central Asia",color:"#ffd500"}
  //       ,{name:"Middle East & North Africa",color:"#009641"},{name:"Sub-Saharan Africa",color:"#95c11f"},{name:"Latin America & Caribbean",color:"#1c9cd8"},{name:"North America",color:"#f39200"}];
 
-    var colors = d3.scale.ordinal().range(["#95c11f", " #009641", "#9d9d9c","#e6007d","#1c9cd8","#ffd500","#f39200","#e9be7c","#42bff9"])
+    var colors = d3.scale.ordinal().range(["#99C794", " #5FB3B3", "#C0C5CE","#C594C5","#6699CC","#FAC863","#F99157","#e9be7c","#6699CC"])
         .domain(["Sub-Saharan Africa", "Middle East and North Africa", "South Asia","East Asia and Pacific","Latin America and the Caribbean","Central and Eastern Europe","Developed regions","Developing regions","World"]);
     var stackZero = d3.layout.stack()
         .values(function (d) {return d.values;})
