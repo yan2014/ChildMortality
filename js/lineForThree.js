@@ -190,9 +190,9 @@ function mouseover(d){
         .style("display", null)
         .style("top", (d3.event.pageY - 5) + "px")
         .style("left", (d3.event.pageX + 10) + "px")
-        .html(function(d){if (temp == "Series1s") {return "Even though the Rwandan genocide happended in 1994,<br> the negative effect of the war last until 2000";}
-            else if(temp=="Series2s") {return "Even though the Congo civil war happended in 1997, <br>the negative effect of the war last until 2003";}
-            else if(temp=="Series3s"){return "Even though the January Events happended in 1991, <br>the negative effect of the war last until 1996";}});
+        .html(function(d){if (temp == "Series1s") {return "<p>Even though the Rwandan genocide happended in 1994,<br> the negative effect of the war last until 2000</p>";}
+            else if(temp=="Series2s") {return "<p>Even though the Congo civil war happended in 1997, <br>the negative effect of the war last until 2003</p>";}
+            else if(temp=="Series3s"){return "<p>Even though the January Events happended in 1991, <br>the negative effect of the war last until 1996</p>";}});
 }
 function mouseout(){
     toolTipForThree.style("display", "none");

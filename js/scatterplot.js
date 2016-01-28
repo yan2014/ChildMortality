@@ -132,4 +132,29 @@ function draw_scatter(data){
             .attr("dy", ".35em")
             .style("text-anchor", "end")
             .text(function(d) { return d.name;})
+
+        //draw dot size
+        var dotscale=[{number:30,r:30},{number:60,r:60},{number:100,r:100}]
+        var dotscale=svg.selectAll(".dotscale")
+            .data(dotscale)
+            .enter()
+            .append("g")
+            .attr("class","dotscale")
+            .attr("transform", function(d,i){ return "translate(0," + d.r/5 + ")"; });
+        dotscale.append("circle")
+            .attr("cx",width-75)
+            .attr("cy",500)
+            .attr("r", function(d, i) { return d.r/5})
+            .style("fill","none")
+            .attr("stroke-width",2)
+            .attr("stroke","gray");
+        dotscale.append("text")
+                .attr("x", width - 68)
+                .attr("y", 503)
+                .attr("dy", ".35em")
+                .style("text-anchor", "end")
+                .text(function(d) { return d.number;})
+                .style("font-size","10px")
+            .attr("transform", function(d,i){ return "translate(0," + d.r/5 + ")"; });
+        //
     };

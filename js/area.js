@@ -274,7 +274,7 @@ function draw_area(data){
                             .style("display", null)
                             .style("top", (d3.event.pageY - 5) + "px")
                             .style("left", (d3.event.pageX + 10) + "px")
-                            .html(d.type);
+                            .html("<p>"+d.type+"</p>");
 
                     })
                     .on("mouseout",function(){
